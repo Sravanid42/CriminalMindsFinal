@@ -62,17 +62,17 @@ public class UI extends JFrame {
 		getContentPane().add(lblCriminalDatabase);
 		
 		textField = new JTextField();
-		textField.setBounds(128, 156, 565, 29);
+		textField.setBounds(12, 156, 681, 29);
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JTextPane display = new JTextPane();
-		display.setBounds(12, 289, 793, 329);
+		display.setBounds(100, 234, 646, 378);
 		getContentPane().add(display);
 		
 		JButton btnDisplayAll = new JButton("Display all");
 		btnDisplayAll.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnDisplayAll.setBounds(12, 156, 104, 26);
+		btnDisplayAll.setBounds(12, 195, 104, 26);
 		getContentPane().add(btnDisplayAll);
 		
 		JButton btnSearch = new JButton("Search");
@@ -86,12 +86,12 @@ public class UI extends JFrame {
 			}
 		});
 		btnSortByAge.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnSortByAge.setBounds(366, 198, 125, 21);
+		btnSortByAge.setBounds(457, 198, 125, 21);
 		getContentPane().add(btnSortByAge);
 		
 		JButton btnSortByState = new JButton("Burglars");
 		btnSortByState.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnSortByState.setBounds(525, 198, 125, 21);
+		btnSortByState.setBounds(680, 198, 125, 21);
 		getContentPane().add(btnSortByState);
 		
 		JButton btnLastName = new JButton("Terrorists");
@@ -100,50 +100,22 @@ public class UI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnLastName.setBounds(12, 198, 125, 21);
+		btnLastName.setBounds(228, 198, 125, 21);
 		getContentPane().add(btnLastName);
-		
-		JButton btnSortByDate = new JButton("Sort by Date");
-		btnSortByDate.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnSortByDate.setBounds(680, 198, 125, 21);
-		getContentPane().add(btnSortByDate);
-		
-		JButton btnFirstName = new JButton("Murderers");
-		btnFirstName.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnFirstName.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnFirstName.setBounds(189, 198, 125, 21);
-		getContentPane().add(btnFirstName);
-
-		JButton btnCharacteristics = new JButton("Characteristics");
-		btnCharacteristics.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnCharacteristics.setBounds(12, 241, 138, 21);
-		btnCharacteristics.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Characteristics frame = new Characteristics();
-				frame.setVisible(true);
-			}
-		});
-		getContentPane().add(btnCharacteristics);
-		
-		JButton btnShowGraph = new JButton("Graphs");
-		btnShowGraph.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnShowGraph.setBounds(667, 241, 138, 21);
-		btnShowGraph.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Graphs frame = new Graphs();
-				frame.setVisible(true);
-			}
-		});
-		getContentPane().add(btnShowGraph);
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Sravani\\Downloads\\tape2.png"));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 38, 832, 105);
 		getContentPane().add(lblNewLabel);
+		
+		JButton btnPrevious = new JButton("Previous");
+		btnPrevious.setBounds(0, 374, 88, 25);
+		getContentPane().add(btnPrevious);
+		
+		JButton btnNext = new JButton("Next");
+		btnNext.setBounds(760, 374, 72, 25);
+		getContentPane().add(btnNext);
 		
 	}
 }
