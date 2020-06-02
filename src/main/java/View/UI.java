@@ -122,9 +122,9 @@ public class UI extends JFrame {
 			}
 			
 		});
-		btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
-		btnSearch.setBounds(12, 195, 104, 26);
-		getContentPane().add(btnSearch);
+		//btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
+		//btnSearch.setBounds(12, 195, 104, 26);
+		//getContentPane().add(btnSearch);
 		
 		JButton btnSortByAge = new JButton("Serial Killers");
 		btnSortByAge.addActionListener(new ActionListener() {
