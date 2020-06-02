@@ -24,6 +24,7 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
 import com.amazonaws.samples.DisplayCriminals;
+import com.amazonaws.samples.*;
 
 public class UI extends JFrame {
 	/**
@@ -86,6 +87,18 @@ public class UI extends JFrame {
 		btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 14));
 		btnSearch.setBounds(705, 156, 104, 26);
 		getContentPane().add(btnSearch);
+		
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String searchString = textField.getText();
+				String delims = "[,]";
+				String [] searchStringArray = searchString.split(delims);
+				
+				scrollPane.setToolTipText(CriminalQuery.main(searchStringArray));
+				
+			}
+			
+		});
 		
 		JButton btnSortByAge = new JButton("Serial Killers");
 		btnSortByAge.addActionListener(new ActionListener() {

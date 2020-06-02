@@ -29,9 +29,9 @@ import java.util.LinkedList;
 
 public class CriminalQuery {
 
-	public static void main(String args[])
+	public static String main(String args[])
 	{
-		ArrayList<Item> stuffs = connect();
+		ArrayList<Item> stuffs = connect(args[0]);
 		System.out.print("Criminals:");
 		for(Item thing:stuffs)
 		{
@@ -44,9 +44,11 @@ public class CriminalQuery {
 			System.out.println(thing.get("Crime for Trial"));
 
 		}
+		
+		return null;
 	}
 	
-	public static ArrayList<Item> connect() {
+	public static ArrayList<Item> connect(String searchString) {
 		ArrayList<Item>itemList = new ArrayList<Item>();
 		ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
         try {
@@ -76,8 +78,11 @@ public class CriminalQuery {
 	    {
 
 	    	item = table.getItem("Prisoner#", x );
+	    	
+	    	String itemString = item.getNumber("5 ID").toString();
 
-	    	itemList.add(item);
+	    	if (itemString.contentEquals(searchString))
+	    		itemList.add(item);
 	    	/*System.out.println(item.getNumber("Id") + ": " 
 	    			+ item.getString("Name"));*/
 	    }
