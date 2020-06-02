@@ -96,10 +96,17 @@ public class UI extends JFrame {
 		scrollPane.setBounds(100, 234, 646, 378);
 		getContentPane().add(scrollPane);
 		
+		JTextPane txtpaneQuery = new JTextPane();
+		//scrollPane.setViewportView(textPane);
+		
 		JButton btnDisplayAll = new JButton("Display all");
 		btnDisplayAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-              DisplayCriminals.main();
+              String returnText = DisplayCriminals.main();
+              
+              scrollPane.setToolTipText(returnText);
+              txtpaneQuery.setText(returnText);
+			  scrollPane.setViewportView(txtpaneQuery);
 
 			}
 			
@@ -127,7 +134,13 @@ public class UI extends JFrame {
 				String delims = "[,]";
 				String [] searchStringArray = searchString.split(delims);
 				
-				scrollPane.setToolTipText(CriminalQuery.main(searchStringArray));
+				String returnText = CriminalQuery.main(searchStringArray);
+				
+				
+				scrollPane.setToolTipText(returnText);
+				
+				txtpaneQuery.setText(returnText);
+				scrollPane.setViewportView(txtpaneQuery);
 				
 			}
 			
@@ -167,6 +180,11 @@ public class UI extends JFrame {
 		btnLastName.setFont(new Font("Rockwell", Font.PLAIN, 14));
 		btnLastName.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String returnText = DisplayTerrorists.main();
+	              
+	            scrollPane.setToolTipText(returnText);
+	            txtpaneQuery.setText(returnText);
+				scrollPane.setViewportView(txtpaneQuery);
 			}
 		});
 		btnLastName.setBounds(308, 196, 125, 27);
