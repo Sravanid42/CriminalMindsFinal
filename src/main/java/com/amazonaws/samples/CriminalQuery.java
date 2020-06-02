@@ -31,7 +31,7 @@ public class CriminalQuery {
 
 	public static String main(String args[])
 	{
-		ArrayList<Item> stuffs = connect(args[0]);
+		ArrayList<Item> stuffs = connect(args);
 		System.out.print("Criminals:");
 		for(Item thing:stuffs)
 		{
@@ -48,7 +48,7 @@ public class CriminalQuery {
 		return null;
 	}
 	
-	public static ArrayList<Item> connect(String searchString) {
+	public static ArrayList<Item> connect(String [] searchString) {
 		ArrayList<Item>itemList = new ArrayList<Item>();
 		ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
         try {
@@ -76,13 +76,20 @@ public class CriminalQuery {
 
 	    for(int x = 1; x <= result.getCount(); x++)
 	    {
-
-	    	item = table.getItem("Prisoner#", x );
+	    	int itemNum = Integer.parseInt(searchString[0]);
+	    	item = table.getItem("Prisoner#", itemNum );
 	    	
-	    	String itemString = item.getNumber("5 ID").toString();
+	    	if (item == null)
+	    		continue;
+	    	
+	    	//String itemID = item.getNumber("5 ID").toString();
+	    	
+	    	item = table.getItem("1 Name", searchString[1]);
 
-	    	if (itemString.contentEquals(searchString))
-	    		itemList.add(item);
+	    	if (item == null)
+	    		continue;
+
+	    	itemList.add(item);
 	    	/*System.out.println(item.getNumber("Id") + ": " 
 	    			+ item.getString("Name"));*/
 	    }
