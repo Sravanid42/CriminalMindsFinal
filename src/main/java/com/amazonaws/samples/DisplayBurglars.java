@@ -27,21 +27,22 @@ import java.util.Random;
 
 import java.util.LinkedList;
 
-public class CriminalQuery {
+public class DisplayBurglars {
 
 	public static void main(String args[])
 	{
 		ArrayList<Item> stuffs = connect();
-		System.out.print("Criminals:");
+		System.out.println("Burglars:");
 		for(Item thing:stuffs)
 		{
-			System.out.println(thing.get("Prisoner#"));
-			System.out.println(thing.get("1 Name"));
-			System.out.println(thing.get("2 Gender"));
-			System.out.println(thing.get("3 Birthday"));
-			System.out.println(thing.get("4 Age"));
-			System.out.println(thing.get("5 ID"));
-			System.out.println(thing.get("Crime for Trial"));
+			System.out.println("BurglarID: " + thing.get("BurglarID"));
+			System.out.print("Prisoner#: " + thing.get("1 Prisoner#"));
+			System.out.println("Name: " + thing.get("2 Name"));
+			System.out.println("Amount Stolen: " + thing.get("3 Amount Stolen"));
+			System.out.println("State of Crime: " + thing.get("4 State of Crime"));
+			System.out.println("Date Apprehended: " + thing.get("5 Date Apprehended"));
+			System.out.println("Other Convictions: " + thing.get("7 Other Convictions"));
+			System.out.println("///////////////////////////////////////");
 
 		}
 	}
@@ -64,20 +65,38 @@ public class CriminalQuery {
             .build();
 
 		DynamoDB dynamoDB = new DynamoDB(client);
-	    Table table = dynamoDB.getTable("Criminals");
+	    Table table = dynamoDB.getTable("Burglars");
 	    ScanRequest scanRequest = new ScanRequest()
-	    	    .withTableName("Criminals");
+	    	    .withTableName("Burglars");
 
 
 	    ScanResult result = client.scan(scanRequest);
 	    Item item;
+	    Item item2;
+	    Item item3;
+	    Item item4;
+	    Item item5;
+	    Item item6;
+	    Item item7;
 
-	    for(int x = 1; x <= result.getCount(); x++)
+	    for(int x = 1; x <= 1; x++)
 	    {
 
-	    	item = table.getItem("Prisoner#", x );
-
+	    	item = table.getItem("BurglarID", "B001");
+	    	item2 = table.getItem("BurglarID", "B002");
+	    	item3 = table.getItem("BurglarID", "B003");
+	    	item4 = table.getItem("BurglarID", "B004");
+	    	item5 = table.getItem("BurglarID", "B005");
+	    	item6 = table.getItem("BurglarID", "B006");
+	    	item7 = table.getItem("BurglarID", "B007");
+	    	
 	    	itemList.add(item);
+	    	itemList.add(item2);
+	    	itemList.add(item3);
+	    	itemList.add(item4);
+	    	itemList.add(item5);
+	    	itemList.add(item6);
+	    	itemList.add(item7);
 	    	/*System.out.println(item.getNumber("Id") + ": " 
 	    			+ item.getString("Name"));*/
 	    }

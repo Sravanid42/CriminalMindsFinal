@@ -27,23 +27,25 @@ import java.util.Random;
 
 import java.util.LinkedList;
 
-public class CriminalQuery {
+public class DisplayCriminals {
 
-	public static void main(String args[])
+	public static String main()
 	{
-		ArrayList<Item> stuffs = connect();
-		System.out.print("Criminals:");
-		for(Item thing:stuffs)
+		ArrayList<Item> list = connect();
+		System.out.println("Criminals:");
+		for(Item thing:list)
 		{
-			System.out.println(thing.get("Prisoner#"));
-			System.out.println(thing.get("1 Name"));
-			System.out.println(thing.get("2 Gender"));
-			System.out.println(thing.get("3 Birthday"));
-			System.out.println(thing.get("4 Age"));
-			System.out.println(thing.get("5 ID"));
-			System.out.println(thing.get("Crime for Trial"));
+			System.out.println("Prisoner #: " + thing.get("Prisoner#"));
+			System.out.print("Name: " + thing.get("1 Name"));
+			System.out.println("Gender: " + thing.get("2 Gender"));
+			System.out.println("Birthday: " + thing.get("3 Birthday"));
+			System.out.println("Age: " + thing.get("4 Age"));
+			System.out.println("ID: " + thing.get("5 ID"));
+			System.out.println("Crime for Trial: " + thing.get("Crime for Trial"));
+			System.out.println("///////////////////////////////////////");
 
 		}
+		return null;
 	}
 	
 	public static ArrayList<Item> connect() {
@@ -75,7 +77,7 @@ public class CriminalQuery {
 	    for(int x = 1; x <= result.getCount(); x++)
 	    {
 
-	    	item = table.getItem("Prisoner#", x );
+	    	item = table.getItem("Prisoner#", x);
 
 	    	itemList.add(item);
 	    	/*System.out.println(item.getNumber("Id") + ": " 

@@ -23,6 +23,8 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
+import com.amazonaws.samples.DisplayCriminals;
+
 public class UI extends JFrame {
 	/**
 	 * 
@@ -66,11 +68,16 @@ public class UI extends JFrame {
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JTextPane display = new JTextPane();
-		display.setBounds(100, 234, 646, 378);
-		getContentPane().add(display);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(100, 234, 646, 378);
+		getContentPane().add(scrollPane);
 		
 		JButton btnDisplayAll = new JButton("Display all");
+		btnDisplayAll.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				scrollPane.setToolTipText(DisplayCriminals.main());
+			}
+		});
 		btnDisplayAll.setFont(new Font("Rockwell", Font.PLAIN, 14));
 		btnDisplayAll.setBounds(12, 195, 104, 26);
 		getContentPane().add(btnDisplayAll);
@@ -116,6 +123,8 @@ public class UI extends JFrame {
 		JButton btnNext = new JButton("Next");
 		btnNext.setBounds(760, 374, 72, 25);
 		getContentPane().add(btnNext);
+		
+
 		
 	}
 }

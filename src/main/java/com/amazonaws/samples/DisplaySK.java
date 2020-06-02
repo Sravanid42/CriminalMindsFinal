@@ -27,21 +27,22 @@ import java.util.Random;
 
 import java.util.LinkedList;
 
-public class CriminalQuery {
+public class DisplaySK {
 
 	public static void main(String args[])
 	{
 		ArrayList<Item> stuffs = connect();
-		System.out.print("Criminals:");
+		System.out.println("Serial Killers:");
 		for(Item thing:stuffs)
 		{
-			System.out.println(thing.get("Prisoner#"));
-			System.out.println(thing.get("1 Name"));
-			System.out.println(thing.get("2 Gender"));
-			System.out.println(thing.get("3 Birthday"));
-			System.out.println(thing.get("4 Age"));
-			System.out.println(thing.get("5 ID"));
-			System.out.println(thing.get("Crime for Trial"));
+			System.out.println("SerialKillerID: " + thing.get("SerialKillerID"));
+			System.out.print("Name: " + thing.get("1 Name"));
+			System.out.println("# Victims: " + thing.get("2 # Victims"));
+			System.out.println("VictimsID: " + thing.get("3 VictimsID"));
+			System.out.println("State of Crime: " + thing.get("4 State of Crime"));
+			System.out.println("Date Apprehended: " + thing.get("5 Date Apprehended"));
+			System.out.println("Other Convictions: " + thing.get("7 Other Convictions"));
+			System.out.println("///////////////////////////////////////");
 
 		}
 	}
@@ -64,20 +65,54 @@ public class CriminalQuery {
             .build();
 
 		DynamoDB dynamoDB = new DynamoDB(client);
-	    Table table = dynamoDB.getTable("Criminals");
+	    Table table = dynamoDB.getTable("SerialKillers");
 	    ScanRequest scanRequest = new ScanRequest()
-	    	    .withTableName("Criminals");
+	    	    .withTableName("SerialKillers");
 
 
 	    ScanResult result = client.scan(scanRequest);
 	    Item item;
+	    Item item2;
+	    Item item3;
+	    Item item4;
+	    Item item5;
+	    Item item6;
+	    Item item7;
+	    Item item8;
+	    Item item9;
+	    Item item10;
+	    Item item11;
+	    Item item12;
 
-	    for(int x = 1; x <= result.getCount(); x++)
+	    for(int x = 1; x <= 1; x++)
 	    {
 
-	    	item = table.getItem("Prisoner#", x );
-
+	    	item = table.getItem("SerialKillerID", "SK001");
+	    	item2 = table.getItem("SerialKillerID", "SK002");
+	    	item3 = table.getItem("SerialKillerID", "SK003");
+	    	item4 = table.getItem("SerialKillerID", "SK004");
+	    	item5 = table.getItem("SerialKillerID", "SK005");
+	    	item6 = table.getItem("SerialKillerID", "SK006");
+	    	item7 = table.getItem("SerialKillerID", "SK007");
+	    	item8 = table.getItem("SerialKillerID", "SK008");
+	    	item9 = table.getItem("SerialKillerID", "SK009");
+	    	item10 = table.getItem("SerialKillerID", "SK0010");
+	    	item11 = table.getItem("SerialKillerID", "SK0011");
+	    	item12 = table.getItem("SerialKillerID", "SK0012");
+	    	
+	    	
 	    	itemList.add(item);
+	    	itemList.add(item2);
+	    	itemList.add(item3);
+	    	itemList.add(item4);
+	    	itemList.add(item5);
+	    	itemList.add(item6);
+	    	itemList.add(item7);
+	    	itemList.add(item8);
+	    	itemList.add(item9);
+	    	itemList.add(item10);
+	    	itemList.add(item11);
+	    	itemList.add(item12);
 	    	/*System.out.println(item.getNumber("Id") + ": " 
 	    			+ item.getString("Name"));*/
 	    }

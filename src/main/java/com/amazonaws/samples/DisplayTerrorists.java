@@ -27,21 +27,21 @@ import java.util.Random;
 
 import java.util.LinkedList;
 
-public class CriminalQuery {
+public class DisplayTerrorists {
 
 	public static void main(String args[])
 	{
 		ArrayList<Item> stuffs = connect();
-		System.out.print("Criminals:");
+		System.out.println("Terrorists:");
 		for(Item thing:stuffs)
 		{
-			System.out.println(thing.get("Prisoner#"));
-			System.out.println(thing.get("1 Name"));
-			System.out.println(thing.get("2 Gender"));
-			System.out.println(thing.get("3 Birthday"));
-			System.out.println(thing.get("4 Age"));
-			System.out.println(thing.get("5 ID"));
-			System.out.println(thing.get("Crime for Trial"));
+			System.out.println("TerroristID: " + thing.get("TerroristID"));
+			System.out.println("Prisoner#: " + thing.get("1 Prisoner#"));
+			System.out.println("Name: " + thing.get("2 Name"));
+			System.out.println("# Victims: " + thing.get("3 # Victims"));
+			System.out.println("Country: " + thing.get("4 Country From"));
+			System.out.println("Attack: " + thing.get("5 Attack"));
+			System.out.println("///////////////////////////////////////");
 
 		}
 	}
@@ -64,20 +64,80 @@ public class CriminalQuery {
             .build();
 
 		DynamoDB dynamoDB = new DynamoDB(client);
-	    Table table = dynamoDB.getTable("Criminals");
+	    Table table = dynamoDB.getTable("Terrorists");
 	    ScanRequest scanRequest = new ScanRequest()
-	    	    .withTableName("Criminals");
+	    	    .withTableName("Terrorists");
 
 
 	    ScanResult result = client.scan(scanRequest);
 	    Item item;
+	    Item item2;
+	    Item item3;
+	    Item item4;
+	    Item item5;
+	    Item item6;
+	    Item item7;
+	    Item item8;
+	    Item item9;
+	    Item item10;
+	    Item item11;
+	    Item item12;
+	    Item item13;
+	    Item item14;
+	    Item item15;
+	    Item item16;
+	    Item item17;
+	    Item item18;
+	    Item item19;
+	    Item item20;
+	    Item item21;
 
-	    for(int x = 1; x <= result.getCount(); x++)
+	    for(int x = 1; x <= 1; x++)
 	    {
 
-	    	item = table.getItem("Prisoner#", x );
-
+	    	item = table.getItem("TerroristID", "T001");
+	    	item2 = table.getItem("TerroristID", "T002");
+	    	item3 = table.getItem("TerroristID", "T003");
+	    	item4 = table.getItem("TerroristID", "T004");
+	    	item5 = table.getItem("TerroristID", "T005");
+	    	item6 = table.getItem("TerroristID", "T006");
+	    	item7 = table.getItem("TerroristID", "T007");
+	    	item8 = table.getItem("TerroristID", "T008");
+	    	item9 = table.getItem("TerroristID", "T009");
+	    	item10 = table.getItem("TerroristID", "T0010");
+	    	item11 = table.getItem("TerroristID", "T0011");
+	    	item12 = table.getItem("TerroristID", "T0012");
+	    	item13 = table.getItem("TerroristID", "T0013");
+	    	item14 = table.getItem("TerroristID", "T0014");
+	    	item15 = table.getItem("TerroristID", "T0015");
+	    	item16 = table.getItem("TerroristID", "T0016");
+	    	item17 = table.getItem("TerroristID", "T0017");
+	    	item18 = table.getItem("TerroristID", "T0018");
+	    	item19 = table.getItem("TerroristID", "T0019");
+	    	item20 = table.getItem("TerroristID", "T0020");
+	    	item21 = table.getItem("TerroristID", "T0021");
+	    	
 	    	itemList.add(item);
+	    	itemList.add(item2);
+	    	itemList.add(item3);
+	    	itemList.add(item4);
+	    	itemList.add(item5);
+	    	itemList.add(item6);
+	    	itemList.add(item7);
+	    	itemList.add(item8);
+	    	itemList.add(item9);
+	    	itemList.add(item10);
+	    	itemList.add(item11);
+	    	itemList.add(item12);
+	    	itemList.add(item13);
+	    	itemList.add(item14);
+	    	itemList.add(item15);
+	    	itemList.add(item16);
+	    	itemList.add(item17);
+	    	itemList.add(item18);
+	    	itemList.add(item19);
+	    	itemList.add(item20);
+	    	itemList.add(item21);
 	    	/*System.out.println(item.getNumber("Id") + ": " 
 	    			+ item.getString("Name"));*/
 	    }
