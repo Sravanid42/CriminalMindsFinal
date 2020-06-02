@@ -138,9 +138,9 @@ public class UI extends JFrame {
 		btnSearch.setBounds(701, 157, 104, 26);
 		getContentPane().add(btnSearch);
 
-		//btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
-		//btnSearch.setBounds(12, 195, 104, 26);
-		//getContentPane().add(btnSearch);
+		btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
+		btnSearch.setBounds(12, 195, 104, 26);
+		getContentPane().add(btnSearch);
 
 
 		
