@@ -100,6 +100,7 @@ public class UI extends JFrame {
 		btnDisplayAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
               DisplayCriminals.main();
+
 			}
 			
 			
