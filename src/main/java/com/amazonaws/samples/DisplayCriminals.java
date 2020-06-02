@@ -31,7 +31,7 @@ import java.util.LinkedList;
 
 public class DisplayCriminals {
 
-	public static void main(String args[])
+	public static void main()
 	{
 		ArrayList<Item> list = connect();
 		System.out.println("Criminals:");
@@ -101,6 +101,7 @@ public class DisplayCriminals {
 
 		return itemList;
 	}
+
 	
 	/*public static LinkedList<Product> BuildLL(int filter, String searchTerm){
 		

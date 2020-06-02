@@ -99,18 +99,26 @@ public class UI extends JFrame {
 		JButton btnDisplayAll = new JButton("Display all");
 		btnDisplayAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				scrollPane.setToolTipText(DisplayCriminals.main());
+              DisplayCriminals.main();
 			}
+			
+			
 		});
 		btnDisplayAll.setFont(new Font("Rockwell", Font.PLAIN, 14));
 		btnDisplayAll.setBounds(22, 195, 104, 26);
+		btnDisplayAll.setBounds(161, 197, 104, 26);
 		getContentPane().add(btnDisplayAll);
 		
 		JButton btnSearch = new JButton("Search");
 		btnSearch.setForeground(Color.BLACK);
 		btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 14));
+
 		btnSearch.setBounds(701, 157, 104, 26);
+
+		btnSearch.setBounds(12, 213, 104, 25);
+
 		getContentPane().add(btnSearch);
+	
 		
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -124,6 +132,7 @@ public class UI extends JFrame {
 			
 		});
 
+
 		btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
 		btnSearch.setBounds(701, 157, 104, 26);
 		getContentPane().add(btnSearch);
@@ -132,18 +141,25 @@ public class UI extends JFrame {
 		//btnSearch.setBounds(12, 195, 104, 26);
 		//getContentPane().add(btnSearch);
 
+
+		
+		
+		btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
+		btnSearch.setBounds(12, 195, 104, 26);
+		getContentPane().add(btnSearch);
+		
 		JButton btnSortByAge = new JButton("Serial Killers");
 		btnSortByAge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		btnSortByAge.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnSortByAge.setBounds(457, 198, 125, 21);
+		btnSortByAge.setBounds(496, 196, 125, 27);
 		getContentPane().add(btnSortByAge);
 		
 		JButton btnSortByState = new JButton("Burglars");
 		btnSortByState.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnSortByState.setBounds(680, 198, 125, 21);
+		btnSortByState.setBounds(662, 196, 125, 27);
 		getContentPane().add(btnSortByState);
 		
 		JButton btnLastName = new JButton("Terrorists");
@@ -152,7 +168,7 @@ public class UI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnLastName.setBounds(228, 198, 125, 21);
+		btnLastName.setBounds(308, 196, 125, 27);
 		getContentPane().add(btnLastName);
 		
 		JLabel lblNewLabel = new JLabel("New label");
