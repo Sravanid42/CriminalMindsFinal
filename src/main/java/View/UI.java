@@ -51,6 +51,7 @@ public class UI extends JFrame {
 	public JTextField txtFieldSearch;
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
+	private JScrollPane display;
 	
 	/**
 	 * Launch the application.
@@ -91,16 +92,15 @@ public class UI extends JFrame {
 		
 
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(100, 234, 646, 378);
-		getContentPane().add(scrollPane);
+		display = new JScrollPane();
+		display.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		display.setBounds(100, 234, 646, 378);
+		getContentPane().add(display);
 		
 		JButton btnDisplayAll = new JButton("Display all");
 		btnDisplayAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-              DisplayCriminals.main();
-
+              display.setToolTipText(DisplayCriminals.connect());
 			}
 			
 			

@@ -51,7 +51,7 @@ public class DisplayCriminals {
 	}
 	
 	public static ArrayList<Item> connect() {
-		ArrayList<Item>itemList = new ArrayList<Item>();
+		ArrayList<Item> itemList = new ArrayList<Item>();
 		ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
         try {
             credentialsProvider.getCredentials();
