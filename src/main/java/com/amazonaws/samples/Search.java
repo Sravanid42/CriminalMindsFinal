@@ -22,19 +22,24 @@ import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
 
+import Util.ConsoleIO;
+
+
 import java.util.ArrayList;
 import java.util.Random;
-
+import java.util.Scanner;
 import java.util.LinkedList;
 
-public class DisplayCriminals {
+public class Search {
 
-	public static String main()
+	public static void main(String args[])
 	{
+		
 		ArrayList<Item> list = connect();
-		System.out.println("Criminals:");
+		System.out.println("Criminal:");
 		for(Item thing:list)
 		{
+			System.out.println("///////////////////////////////////////");
 			System.out.println("Prisoner #: " + thing.get("Prisoner#"));
 			System.out.println("Name: " + thing.get("1 Name"));
 			System.out.println("Gender: " + thing.get("2 Gender"));
@@ -45,9 +50,9 @@ public class DisplayCriminals {
 			System.out.println("///////////////////////////////////////");
 
 		}
-		return null;
+
 	}
-	
+
 	public static ArrayList<Item> connect() {
 		ArrayList<Item>itemList = new ArrayList<Item>();
 		ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
@@ -73,11 +78,14 @@ public class DisplayCriminals {
 
 	    ScanResult result = client.scan(scanRequest);
 	    Item item;
+	    int prisonerNumber = ConsoleIO.readInt("Search for a Number (1-40) ");
 
-	    for(int x = 1; x <= result.getCount(); x++)
+
+    	
+	    for(int x = 1; x <= 1; x++)
 	    {
 
-	    	item = table.getItem("Prisoner#", x);
+	    	item = table.getItem("Prisoner#", prisonerNumber );
 
 	    	itemList.add(item);
 	    	/*System.out.println(item.getNumber("Id") + ": " 

@@ -11,6 +11,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
@@ -23,13 +24,31 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.samples.DisplayCriminals;
+<<<<<<< HEAD
 import com.amazonaws.samples.*;
+=======
+import com.amazonaws.samples.Search;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.document.DynamoDB;
+import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.model.ScanRequest;
+import com.amazonaws.services.dynamodbv2.model.ScanResult;
+
+import Util.ConsoleIO;
+
+import javax.swing.ScrollPaneConstants;
+>>>>>>> branch 'master' of https://github.com/Sravanid42/CriminalMindsFinal.git
 
 public class UI extends JFrame {
 	/**
 	 * 
 	 */
+	public JTextField txtFieldSearch;
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	
@@ -64,12 +83,16 @@ public class UI extends JFrame {
 		lblCriminalDatabase.setBounds(329, 0, 164, 37);
 		getContentPane().add(lblCriminalDatabase);
 		
-		textField = new JTextField();
-		textField.setBounds(12, 156, 681, 29);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		
+		JTextField txtFieldSearch = new JTextField();
+		txtFieldSearch.setBounds(12, 156, 681, 29);
+		getContentPane().add(txtFieldSearch);
+		txtFieldSearch.setColumns(10);
+		
+
 		
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setBounds(100, 234, 646, 378);
 		getContentPane().add(scrollPane);
 		
@@ -131,14 +154,6 @@ public class UI extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 38, 832, 105);
 		getContentPane().add(lblNewLabel);
-		
-		JButton btnPrevious = new JButton("Previous");
-		btnPrevious.setBounds(0, 374, 88, 25);
-		getContentPane().add(btnPrevious);
-		
-		JButton btnNext = new JButton("Next");
-		btnNext.setBounds(760, 374, 72, 25);
-		getContentPane().add(btnNext);
 		
 
 		

@@ -36,7 +36,7 @@ public class DisplaySK {
 		for(Item thing:stuffs)
 		{
 			System.out.println("SerialKillerID: " + thing.get("SerialKillerID"));
-			System.out.print("Name: " + thing.get("1 Name"));
+			System.out.println("Name: " + thing.get("1 Name"));
 			System.out.println("# Victims: " + thing.get("2 # Victims"));
 			System.out.println("VictimsID: " + thing.get("3 VictimsID"));
 			System.out.println("State of Crime: " + thing.get("4 State of Crime"));
