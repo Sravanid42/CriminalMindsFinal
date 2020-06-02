@@ -11,6 +11,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
@@ -23,7 +24,20 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.samples.DisplayCriminals;
+import com.amazonaws.samples.Search;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.document.DynamoDB;
+import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.model.ScanRequest;
+import com.amazonaws.services.dynamodbv2.model.ScanResult;
+
+import Util.ConsoleIO;
+
 import javax.swing.ScrollPaneConstants;
 
 public class UI extends JFrame {
@@ -67,9 +81,6 @@ public class UI extends JFrame {
 		
 		
 		JTextField txtFieldSearch = new JTextField();
-		txtFieldSearch.setForeground(Color.BLACK);
-		txtFieldSearch.setFont(new Font("Myanmar MN", Font.PLAIN, 16));
-		txtFieldSearch.setText("Search for a Number (1-40)");
 		txtFieldSearch.setBounds(12, 156, 681, 29);
 		getContentPane().add(txtFieldSearch);
 		txtFieldSearch.setColumns(10);
@@ -127,8 +138,5 @@ public class UI extends JFrame {
 		
 
 		
-	}
-	public void searchData() {
-		String input = txtFieldSearch.getText();
 	}
 }
