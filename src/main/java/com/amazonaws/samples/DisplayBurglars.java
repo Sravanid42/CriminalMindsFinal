@@ -36,7 +36,7 @@ public class DisplayBurglars {
 		for(Item thing:stuffs)
 		{
 			System.out.println("BurglarID: " + thing.get("BurglarID"));
-			System.out.print("Prisoner#: " + thing.get("1 Prisoner#"));
+			System.out.println("Prisoner#: " + thing.get("1 Prisoner#"));
 			System.out.println("Name: " + thing.get("2 Name"));
 			System.out.println("Amount Stolen: " + thing.get("3 Amount Stolen"));
 			System.out.println("State of Crime: " + thing.get("4 State of Crime"));

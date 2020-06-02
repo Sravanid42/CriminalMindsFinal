@@ -24,11 +24,13 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 
 import com.amazonaws.samples.DisplayCriminals;
+import javax.swing.ScrollPaneConstants;
 
 public class UI extends JFrame {
 	/**
 	 * 
 	 */
+	public JTextField txtFieldSearch;
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	
@@ -63,12 +65,19 @@ public class UI extends JFrame {
 		lblCriminalDatabase.setBounds(329, 0, 164, 37);
 		getContentPane().add(lblCriminalDatabase);
 		
-		textField = new JTextField();
-		textField.setBounds(12, 156, 681, 29);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		
+		JTextField txtFieldSearch = new JTextField();
+		txtFieldSearch.setForeground(Color.BLACK);
+		txtFieldSearch.setFont(new Font("Myanmar MN", Font.PLAIN, 16));
+		txtFieldSearch.setText("Search for a Number (1-40)");
+		txtFieldSearch.setBounds(12, 156, 681, 29);
+		getContentPane().add(txtFieldSearch);
+		txtFieldSearch.setColumns(10);
+		
+
 		
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setBounds(100, 234, 646, 378);
 		getContentPane().add(scrollPane);
 		
@@ -116,15 +125,10 @@ public class UI extends JFrame {
 		lblNewLabel.setBounds(0, 38, 832, 105);
 		getContentPane().add(lblNewLabel);
 		
-		JButton btnPrevious = new JButton("Previous");
-		btnPrevious.setBounds(0, 374, 88, 25);
-		getContentPane().add(btnPrevious);
-		
-		JButton btnNext = new JButton("Next");
-		btnNext.setBounds(760, 374, 72, 25);
-		getContentPane().add(btnNext);
-		
 
 		
+	}
+	public void searchData() {
+		String input = txtFieldSearch.getText();
 	}
 }
