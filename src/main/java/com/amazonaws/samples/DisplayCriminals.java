@@ -22,6 +22,8 @@ import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
 
+import Util.ConsoleIO;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -29,7 +31,7 @@ import java.util.LinkedList;
 
 public class DisplayCriminals {
 
-	public static String main()
+	public static void main(String args[])
 	{
 		ArrayList<Item> list = connect();
 		System.out.println("Criminals:");
@@ -45,7 +47,7 @@ public class DisplayCriminals {
 			System.out.println("///////////////////////////////////////");
 
 		}
-		return null;
+
 	}
 	
 	public static ArrayList<Item> connect() {

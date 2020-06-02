@@ -118,15 +118,20 @@ public class UI extends JFrame {
 				String delims = "[,]";
 				String [] searchStringArray = searchString.split(delims);
 				
-				scrollPane.setToolTipText(Search.main(searchStringArray));
+				scrollPane.setToolTipText(CriminalQuery.main(searchStringArray));
 				
 			}
 			
 		});
+
 		btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
 		btnSearch.setBounds(701, 157, 104, 26);
 		getContentPane().add(btnSearch);
-		
+
+		//btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
+		//btnSearch.setBounds(12, 195, 104, 26);
+		//getContentPane().add(btnSearch);
+
 		JButton btnSortByAge = new JButton("Serial Killers");
 		btnSortByAge.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
