@@ -27,9 +27,9 @@ import javax.swing.SwingConstants;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.samples.DisplayCriminals;
-<<<<<<< HEAD
+
 import com.amazonaws.samples.*;
-=======
+
 import com.amazonaws.samples.Search;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
@@ -42,7 +42,7 @@ import com.amazonaws.services.dynamodbv2.model.ScanResult;
 import Util.ConsoleIO;
 
 import javax.swing.ScrollPaneConstants;
->>>>>>> branch 'master' of https://github.com/Sravanid42/CriminalMindsFinal.git
+
 
 public class UI extends JFrame {
 	/**
@@ -103,27 +103,28 @@ public class UI extends JFrame {
 			}
 		});
 		btnDisplayAll.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnDisplayAll.setBounds(12, 195, 104, 26);
+		btnDisplayAll.setBounds(22, 195, 104, 26);
 		getContentPane().add(btnDisplayAll);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.setForeground(Color.BLACK);
 		btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnSearch.setBounds(705, 156, 104, 26);
+		btnSearch.setBounds(701, 157, 104, 26);
 		getContentPane().add(btnSearch);
 		
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String searchString = textField.getText();
+				String searchString = txtFieldSearch.getText();
 				String delims = "[,]";
 				String [] searchStringArray = searchString.split(delims);
 				
-				scrollPane.setToolTipText(CriminalQuery.main(searchStringArray));
+				scrollPane.setToolTipText(Search.main(searchStringArray));
 				
 			}
 			
 		});
 		btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
-		btnSearch.setBounds(12, 195, 104, 26);
+		btnSearch.setBounds(701, 157, 104, 26);
 		getContentPane().add(btnSearch);
 		
 		JButton btnSortByAge = new JButton("Serial Killers");

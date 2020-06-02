@@ -32,7 +32,7 @@ import java.util.LinkedList;
 
 public class Search {
 
-	public static void main(String args[])
+	public static String main(String args[])
 	{
 		
 		ArrayList<Item> list = connect();
@@ -51,6 +51,7 @@ public class Search {
 
 		}
 
+		return null;
 	}
 
 	public static ArrayList<Item> connect() {
