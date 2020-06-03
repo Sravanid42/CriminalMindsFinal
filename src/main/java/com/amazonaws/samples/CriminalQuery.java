@@ -33,19 +33,30 @@ public class CriminalQuery {
 	{
 		ArrayList<Item> stuffs = connect(args);
 		System.out.print("Criminals:");
+		
+		String returnString = "";
+		
 		for(Item thing:stuffs)
 		{
-			System.out.println(thing.get("Prisoner#"));
+			//System.out.println(thing.get("Prisoner#"));
 			System.out.println(thing.get("1 Name"));
-			System.out.println(thing.get("2 Gender"));
-			System.out.println(thing.get("3 Birthday"));
-			System.out.println(thing.get("4 Age"));
-			System.out.println(thing.get("5 ID"));
-			System.out.println(thing.get("Crime for Trial"));
+			//System.out.println(thing.get("2 Gender"));
+			//System.out.println(thing.get("3 Birthday"));
+			//System.out.println(thing.get("4 Age"));
+			//System.out.println(thing.get("5 ID"));
+			//System.out.println(thing.get("Crime for Trial"));
+			
+			returnString = "Prisoner #: " + thing.get("Prisoner#") + "\n"
+					     + "Name: " + thing.get("1 Name") + "\n"
+					     + "Gender: " +  thing.get("2 Gender") + "\n"
+					     + "Birthday: " + thing.get("3 Birthday") + "\n"
+					     + "Age: " + thing.get("4 Age") + "\n"
+					     + "ID: " + thing.get("5 ID") + "\n"
+					     + "Crime for Trial: " + thing.get("Crime for Trial") + "\n";
 
 		}
 		
-		return null;
+		return returnString;
 	}
 	
 	public static ArrayList<Item> connect(String [] searchString) {
@@ -84,12 +95,13 @@ public class CriminalQuery {
 	    	
 	    	//String itemID = item.getNumber("5 ID").toString();
 	    	
-	    	item = table.getItem("1 Name", searchString[1]);
+	    	//item = table.getItem("1 Name", searchString[1]);
 
-	    	if (item == null)
-	    		continue;
+	    	//if (item == null)
+	    	//	continue;
 
 	    	itemList.add(item);
+	    	break;
 	    	/*System.out.println(item.getNumber("Id") + ": " 
 	    			+ item.getString("Name"));*/
 	    }

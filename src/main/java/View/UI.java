@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JScrollPane;
 
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -86,6 +87,9 @@ public class UI extends JFrame {
 		
 		
 		JTextField txtFieldSearch = new JTextField();
+		txtFieldSearch.setForeground(Color.BLACK);
+		txtFieldSearch.setFont(new Font("Big Caslon", Font.PLAIN, 16));
+		txtFieldSearch.setText("Sea");
 		txtFieldSearch.setBounds(12, 156, 681, 29);
 		getContentPane().add(txtFieldSearch);
 		txtFieldSearch.setColumns(10);
@@ -97,10 +101,19 @@ public class UI extends JFrame {
 		display.setBounds(100, 234, 646, 378);
 		getContentPane().add(display);
 		
+		JTextPane txtpaneQuery = new JTextPane();
+		//scrollPane.setViewportView(textPane);
+		
 		JButton btnDisplayAll = new JButton("Display all");
 		btnDisplayAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-              display.setToolTipText(DisplayCriminals.connect());
+
+              String returnText = DisplayCriminals.main();
+              
+              display.setToolTipText(returnText);
+              txtpaneQuery.setText(returnText);
+			  display.setViewportView(txtpaneQuery);
+
 			}
 			
 			
@@ -127,7 +140,13 @@ public class UI extends JFrame {
 				String delims = "[,]";
 				String [] searchStringArray = searchString.split(delims);
 				
-				scrollPane.setToolTipText(CriminalQuery.main(searchStringArray));
+				String returnText = CriminalQuery.main(searchStringArray);
+				
+				
+				display.setToolTipText(returnText);
+				
+				txtpaneQuery.setText(returnText);
+				display.setViewportView(txtpaneQuery);
 				
 			}
 			
@@ -138,9 +157,9 @@ public class UI extends JFrame {
 		btnSearch.setBounds(701, 157, 104, 26);
 		getContentPane().add(btnSearch);
 
-		//btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
-		//btnSearch.setBounds(12, 195, 104, 26);
-		//getContentPane().add(btnSearch);
+		btnSearch.setFont(new Font("Rockwell", Font.PLAIN, 12));
+		btnSearch.setBounds(12, 195, 104, 26);
+		getContentPane().add(btnSearch);
 
 
 		
@@ -149,28 +168,55 @@ public class UI extends JFrame {
 		btnSearch.setBounds(12, 195, 104, 26);
 		getContentPane().add(btnSearch);
 		
-		JButton btnSortByAge = new JButton("Serial Killers");
-		btnSortByAge.addActionListener(new ActionListener() {
+		JButton btnSK = new JButton("Serial Killers");
+		btnSK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+              String returnText = DisplaySK.main();
+              
+              display.setToolTipText(returnText);
+              txtpaneQuery.setText(returnText);
+			  display.setViewportView(txtpaneQuery);
+
+			}
+			
+			
+		});
+		btnSK.setFont(new Font("Rockwell", Font.PLAIN, 14));
+		btnSK.setBounds(496, 196, 125, 27);
+		getContentPane().add(btnSK);
+		
+		JButton btnBurglars = new JButton("Burglars");
+		btnBurglars.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+              String returnText = DisplayBurglars.main();
+              
+              display.setToolTipText(returnText);
+              txtpaneQuery.setText(returnText);
+			  display.setViewportView(txtpaneQuery);
+
+			}
+			
+			
+		});
+		btnBurglars.setFont(new Font("Rockwell", Font.PLAIN, 14));
+		btnBurglars.setBounds(662, 196, 125, 27);
+		getContentPane().add(btnBurglars);
+		
+		JButton btnTerrorists = new JButton("Terrorists");
+		btnTerrorists.setFont(new Font("Rockwell", Font.PLAIN, 14));
+		btnTerrorists.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String returnText = DisplayTerrorists.main();
+	              
+	            display.setToolTipText(returnText);
+	            txtpaneQuery.setText(returnText);
+				display.setViewportView(txtpaneQuery);
 			}
 		});
-		btnSortByAge.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnSortByAge.setBounds(496, 196, 125, 27);
-		getContentPane().add(btnSortByAge);
-		
-		JButton btnSortByState = new JButton("Burglars");
-		btnSortByState.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnSortByState.setBounds(662, 196, 125, 27);
-		getContentPane().add(btnSortByState);
-		
-		JButton btnLastName = new JButton("Terrorists");
-		btnLastName.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnLastName.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnLastName.setBounds(308, 196, 125, 27);
-		getContentPane().add(btnLastName);
+		btnTerrorists.setBounds(308, 196, 125, 27);
+		getContentPane().add(btnTerrorists);
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Sravani\\Downloads\\tape2.png"));

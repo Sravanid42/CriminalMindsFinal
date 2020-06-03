@@ -29,10 +29,13 @@ import java.util.LinkedList;
 
 public class DisplayBurglars {
 
-	public static void main(String args[])
+	public static String main()
 	{
 		ArrayList<Item> stuffs = connect();
 		System.out.println("Burglars:");
+		
+		String returnString = "";
+		
 		for(Item thing:stuffs)
 		{
 			System.out.println("BurglarID: " + thing.get("BurglarID"));
@@ -41,10 +44,21 @@ public class DisplayBurglars {
 			System.out.println("Amount Stolen: " + thing.get("3 Amount Stolen"));
 			System.out.println("State of Crime: " + thing.get("4 State of Crime"));
 			System.out.println("Date Apprehended: " + thing.get("5 Date Apprehended"));
+			System.out.println("Penalty " + thing.get("6 Penalty"));
 			System.out.println("Other Convictions: " + thing.get("7 Other Convictions"));
 			System.out.println("///////////////////////////////////////");
+			
+			returnString = returnString + "\n" + "Burglar ID: " + thing.get("BurglarID") + "\n"
+				     + "Prisoner #: " + thing.get("1 Prisoner#") + "\n"
+				     + "Name: " +  thing.get("2 Name") + "\n"
+				     + "Amount Stolen: " + thing.get("3 Amount Stolen") + "\n"
+				     + "State of Crime: " + thing.get("4 State of Crime") + "\n"
+				     + "Date Apprehended: " + thing.get("5 Date Apprehended") + "\n"
+				     + "Penalty: " + thing.get("6 Penalty") + "\n"
+				     + "Other Convictions: " + thing.get("7 Other Convictions") + "\n";
 
 		}
+		return returnString;
 	}
 	
 	public static ArrayList<Item> connect() {

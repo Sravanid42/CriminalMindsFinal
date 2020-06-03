@@ -29,10 +29,13 @@ import java.util.LinkedList;
 
 public class DisplayTerrorists {
 
-	public static void main(String args[])
+	public static String main()
 	{
 		ArrayList<Item> stuffs = connect();
 		System.out.println("Terrorists:");
+		
+		String returnString = "";
+		
 		for(Item thing:stuffs)
 		{
 			System.out.println("TerroristID: " + thing.get("TerroristID"));
@@ -42,8 +45,17 @@ public class DisplayTerrorists {
 			System.out.println("Country: " + thing.get("4 Country From"));
 			System.out.println("Attack: " + thing.get("5 Attack"));
 			System.out.println("///////////////////////////////////////");
+			
+			returnString = returnString + "\n" + "Prisoner ID: " + thing.get("TerroristID") + "\n"
+				     + "Prisoner #: " + thing.get("1 Prisoner#") + "\n"
+				     + "Name: " +  thing.get("2 Name") + "\n"
+				     + "# Victims: " + thing.get("3 # Victims") + "\n"
+				     + "Country: " + thing.get("4 Country From") + "\n"
+				     + "Attack: " + thing.get("5 Attack") + "\n";
 
 		}
+		
+		return returnString;
 	}
 	
 	public static ArrayList<Item> connect() {
@@ -79,18 +91,7 @@ public class DisplayTerrorists {
 	    Item item7;
 	    Item item8;
 	    Item item9;
-	    Item item10;
-	    Item item11;
-	    Item item12;
-	    Item item13;
-	    Item item14;
-	    Item item15;
-	    Item item16;
-	    Item item17;
-	    Item item18;
-	    Item item19;
-	    Item item20;
-	    Item item21;
+	    
 
 	    for(int x = 1; x <= 1; x++)
 	    {
@@ -104,18 +105,7 @@ public class DisplayTerrorists {
 	    	item7 = table.getItem("TerroristID", "T007");
 	    	item8 = table.getItem("TerroristID", "T008");
 	    	item9 = table.getItem("TerroristID", "T009");
-	    	item10 = table.getItem("TerroristID", "T0010");
-	    	item11 = table.getItem("TerroristID", "T0011");
-	    	item12 = table.getItem("TerroristID", "T0012");
-	    	item13 = table.getItem("TerroristID", "T0013");
-	    	item14 = table.getItem("TerroristID", "T0014");
-	    	item15 = table.getItem("TerroristID", "T0015");
-	    	item16 = table.getItem("TerroristID", "T0016");
-	    	item17 = table.getItem("TerroristID", "T0017");
-	    	item18 = table.getItem("TerroristID", "T0018");
-	    	item19 = table.getItem("TerroristID", "T0019");
-	    	item20 = table.getItem("TerroristID", "T0020");
-	    	item21 = table.getItem("TerroristID", "T0021");
+
 	    	
 	    	itemList.add(item);
 	    	itemList.add(item2);
@@ -126,18 +116,7 @@ public class DisplayTerrorists {
 	    	itemList.add(item7);
 	    	itemList.add(item8);
 	    	itemList.add(item9);
-	    	itemList.add(item10);
-	    	itemList.add(item11);
-	    	itemList.add(item12);
-	    	itemList.add(item13);
-	    	itemList.add(item14);
-	    	itemList.add(item15);
-	    	itemList.add(item16);
-	    	itemList.add(item17);
-	    	itemList.add(item18);
-	    	itemList.add(item19);
-	    	itemList.add(item20);
-	    	itemList.add(item21);
+
 	    	/*System.out.println(item.getNumber("Id") + ": " 
 	    			+ item.getString("Name"));*/
 	    }

@@ -29,22 +29,37 @@ import java.util.LinkedList;
 
 public class DisplaySK {
 
-	public static void main(String args[])
+	public static String main()
 	{
 		ArrayList<Item> stuffs = connect();
 		System.out.println("Serial Killers:");
+		
+		String returnString = "";
+		
 		for(Item thing:stuffs)
 		{
 			System.out.println("SerialKillerID: " + thing.get("SerialKillerID"));
+			System.out.println("Prisoner #: " + thing.get("Prisoner#"));
 			System.out.println("Name: " + thing.get("1 Name"));
 			System.out.println("# Victims: " + thing.get("2 # Victims"));
 			System.out.println("VictimsID: " + thing.get("3 VictimsID"));
 			System.out.println("State of Crime: " + thing.get("4 State of Crime"));
 			System.out.println("Date Apprehended: " + thing.get("5 Date Apprehended"));
+			System.out.println("Penalty " + thing.get("6 Penalty"));
 			System.out.println("Other Convictions: " + thing.get("7 Other Convictions"));
 			System.out.println("///////////////////////////////////////");
 
+			returnString = returnString + "\n" + "Serial Killer ID: " + thing.get("SerialKillerID") + "\n"
+				     + "Prisoner #: " + thing.get("1 Prisoner#") + "\n"
+				     + "Name: " +  thing.get("1 Name") + "\n"
+				     + "# Victims: " + thing.get("2 # Victims") + "\n"
+				     + "Victims ID: " + thing.get("3 VictimsID") + "\n"
+				     + "State of Crime: " + thing.get("4 State of Crime") + "\n"
+				     + "Date Apprehended: " + thing.get("5 Date Apprehended") + "\n"
+				     + "Penalty: " + thing.get("6 Penalty") + "\n"
+				     + "Other Convictions: " + thing.get("7 Other Convictions") + "\n";
 		}
+		return returnString;
 	}
 	
 	public static ArrayList<Item> connect() {
@@ -80,9 +95,6 @@ public class DisplaySK {
 	    Item item7;
 	    Item item8;
 	    Item item9;
-	    Item item10;
-	    Item item11;
-	    Item item12;
 
 	    for(int x = 1; x <= 1; x++)
 	    {
@@ -96,9 +108,7 @@ public class DisplaySK {
 	    	item7 = table.getItem("SerialKillerID", "SK007");
 	    	item8 = table.getItem("SerialKillerID", "SK008");
 	    	item9 = table.getItem("SerialKillerID", "SK009");
-	    	item10 = table.getItem("SerialKillerID", "SK0010");
-	    	item11 = table.getItem("SerialKillerID", "SK0011");
-	    	item12 = table.getItem("SerialKillerID", "SK0012");
+
 	    	
 	    	
 	    	itemList.add(item);
@@ -110,9 +120,7 @@ public class DisplaySK {
 	    	itemList.add(item7);
 	    	itemList.add(item8);
 	    	itemList.add(item9);
-	    	itemList.add(item10);
-	    	itemList.add(item11);
-	    	itemList.add(item12);
+
 	    	/*System.out.println(item.getNumber("Id") + ": " 
 	    			+ item.getString("Name"));*/
 	    }

@@ -31,10 +31,13 @@ import java.util.LinkedList;
 
 public class DisplayCriminals {
 
-	public static void main()
+	public static String main()
 	{
 		ArrayList<Item> list = connect();
 		System.out.println("Criminals:");
+		
+		String returnString = "";
+		
 		for(Item thing:list)
 		{
 			System.out.println("Prisoner #: " + thing.get("Prisoner#"));
@@ -45,8 +48,18 @@ public class DisplayCriminals {
 			System.out.println("ID: " + thing.get("5 ID"));
 			System.out.println("Crime for Trial: " + thing.get("Crime for Trial"));
 			System.out.println("///////////////////////////////////////");
+			
+			returnString = returnString + "\n" + "Prisoner #: " + thing.get("Prisoner#") + "\n"
+				     + "Name: " + thing.get("1 Name") + "\n"
+				     + "Gender: " +  thing.get("2 Gender") + "\n"
+				     + "Birthday: " + thing.get("3 Birthday") + "\n"
+				     + "Age: " + thing.get("4 Age") + "\n"
+				     + "ID: " + thing.get("5 ID") + "\n"
+				     + "Crime for Trial: " + thing.get("Crime for Trial") + "\n";
 
 		}
+		
+		return returnString;
 
 	}
 	
